@@ -12,8 +12,17 @@ browserify-override is a browserify middleware :
 
 ```js
 var b = require('browserify')();
-b.use(require('browserify-override').flags())
+b.use(require('browserify-override').rules({
+  'sasl.js': {
+    action: 'patch',
+    replace: 'console.log("*");',
+    with: ''
+  }
+}));
 ```
+
+If rules are not explicitly provided, browserify-override will `require("rules.js")`,
+allowing you to set rules in a rules.js file in a valid [node_modules folder](http://nodejs.org/api/modules.html#modules_loading_from_node_modules_folders).
 
 ## Licence
 MIT
