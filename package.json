@@ -2,7 +2,7 @@
   "author": "willscott",
   "name": "browserify-override",
   "description": "Browserify middleware for local overrides",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/willscott/node-browserify-override",
   "repository": {
     "type": "git",
