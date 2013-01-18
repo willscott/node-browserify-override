@@ -15,8 +15,20 @@ var b = require('browserify')();
 b.use(require('browserify-override').rules({
   'sasl.js': {
     action: 'patch',
-    replace: 'console.log("*");',
-    with: ''
+    rules: [{
+      from: 'console.log',
+      to: '//console.log'
+    }]
+  },
+  'net.js': {
+    action: 'replace',
+    with: 'net.js',
+    from: module
+  },
+  'dns': {
+    action: 'define',
+    with: 'dns.js',
+    from: module
   }
 }));
 ```
