@@ -29,6 +29,11 @@ b.use(require('browserify-override').rules({
     action: 'define',
     with: 'dns.js',
     from: module
+  },
+  'element.js': {
+    action: 'append',
+    with: 'element.js',
+    from: module
   }
 }));
 ```
@@ -38,8 +43,8 @@ allowing you to set rules in a rules.js file in a valid [node_modules folder](ht
 
 # Example
 
-The canonical example of browserify-override, is the modifications in [UProxy](https://github.com/UWNetworksLab/UProxy/tree/master/node-xmpp/chrome-support),
-which patch the node-xmpp code-base to run as a chrome application based on the chrome.socket API.
+The canonical example of browserify-override, is the modifications in [UProxy](https://github.com/UWNetworksLab/UProxy/tree/master/app/identity/node-xmpp/chrome-support),
+which patchs the node-xmpp code-base to run as a chrome application based on the chrome.socket API.
 
 ## Licence
 MIT
